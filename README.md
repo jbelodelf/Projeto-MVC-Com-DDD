@@ -10,7 +10,7 @@
 - Abrir o projeto no Visual Studio 2017
 - Alterar a ConectionString da Aplicação e do WebApi
 - Compilar e Recompilar o projeto.
-- Verificar se está subindo o site e a API simultâneas, caso não estiver, seter para inicializão com varios projetos. Iniciar como: - - - WebAplication e WebApi
+- Verificar se está subindo o site e a API simultâneas, caso não estiver, seter para inicializão com varios projetos. Iniciar como:  WebAplication e WebApi
 - Usuário: jdelfino
 - Senha: teste@123 (Esta senha eu deixei para ser usada em teste, a validação é realizada com base no Hash)
 - Está disponível para Cadastrar, Alterar, Deletar e Consultar.
