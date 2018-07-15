@@ -1,0 +1,49 @@
+﻿@model IEnumerable<JoseBeloDelfino.ViewModels.FuncionarioViewModel>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo.DescricaoCargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
+        <th>
+            Opções
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargo.DescricaoCargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pais)
+        </td>
+        <td>
+            <a href="javascript:;" onclick="Funcionario.Editar(@item.IdFuncionario)" title="Editar"><i class="fa fa-edit"></i></a>
+            <a href="javascript:;" onclick="Funcionario.Deletar(@item.IdFuncionario)" title="Excluir"><i class="fa fa-trash"></i></a>
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,118 @@
+﻿@model JoseBeloDelfino.ViewModels.FuncionarioViewModel
+
+@using (Html.BeginForm("Salvar", "Funcionario", FormMethod.Post, new { name = "frmFuncionario", id = "frmFuncionario" }))
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden"  id="IdFuncionario" value="@Model.IdFuncionario" />
+
+    <fieldset>
+        <legend>@ViewBag.Title</legend>
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group row col-md-12">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @maxlength = "60" } })
+                        @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    @Html.LabelFor(model => model.Cpf, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Cpf, new { htmlAttributes = new { @class = "form-control", @maxlength = "20" } })
+                        @Html.ValidationMessageFor(model => model.Cpf, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    @Html.LabelFor(model => model.Rg, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Rg, new { htmlAttributes = new { @class = "form-control", @maxlength = "15" } })
+                        @Html.ValidationMessageFor(model => model.Rg, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row col-md-12">
+                <div class="form-group col-md-8">
+                    @Html.LabelFor(model => model.Endereco, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control", @maxlength = "50" } })
+                        @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Cep, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control", @maxlength = "8" } })
+                        @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control", @maxlength = "40" } })
+                        @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control", @maxlength = "2" } })
+                        @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Pais, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Pais, new { htmlAttributes = new { @class = "form-control", @maxlength = "30" } })
+                        @Html.ValidationMessageFor(model => model.Pais, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row col-md-12">
+                <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.ComboCargo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.DropDownListFor(model => model.IdCargo, Model.ComboCargo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ComboCargo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.ComboDepartamento, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.DropDownListFor(model => model.IdDepartamento, Model.ComboDepartamento, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Departamento, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.ComboSupervisor, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.DropDownListFor(model => model.IdSupervisor, Model.ComboSupervisor, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ComboSupervisor, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-offset-2 col-md-12 text-md-right">
+                    <a href="javascript:;" class="btn btn-primary" id="btSalvar">Salvar</a>
+                    <a href="javascript:;" class="btn btn-danger" id="btVoltar" onclick="Funcionario.VoltarFuncionario();">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+}
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Content/Bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/Content/Bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="~/Scripts/js/Funcionario.js"></script>
+<script src="~/Scripts/bootbox/bootbox.js"></script>

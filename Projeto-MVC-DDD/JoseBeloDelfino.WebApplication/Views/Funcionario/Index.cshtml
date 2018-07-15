@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron row">
+    <div class="col-md-8 form-group row">
+        <div class="col-md-1">
+            <lable>Nome</lable>
+        </div>
+        <div class="col-md-11">
+            <input type="text" class="form-control" id="NomePesquisar" name="NomePesquisar" />
+        </div>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-primary" id="btPesquisar">Pesquisar</button>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-primary" id="btNovo">Novo funcionário</button>
+    </div>
+</div>
+
+<div class="row" id="ListarFuncionarios"></div>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Content/Bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/Content/Bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="~/Scripts/js/Funcionario.js"></script>
+<script src="~/Scripts/bootbox/bootbox.js"></script>
