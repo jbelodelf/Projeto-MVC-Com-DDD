@@ -1,7 +1,5 @@
 # Projeto-MVC-Com-DDD
 
-- Codigo para avaliação de teste
-
 - O projeto foi desenvolvido no Visual Studio 2017
 
 - Faça o download do repositório
